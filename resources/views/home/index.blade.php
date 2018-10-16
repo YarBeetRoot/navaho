@@ -2,24 +2,24 @@
 
 @section('content')
 
-    @include('home.slider')
+    @include('home.parts.slider')
 
-    @include('home.feature')
+    @include('home.parts.feature')
 
-    @include('home.about')
+    @include('home.parts.about')
 
-    @include('home.counter')
+    @include('home.parts.counter')
 
-    @include('home.service')
+    @include('home.parts.service')
 
-    @include('home.pricing-table')
+    @include('home.parts.pricing-table')
 
-    @include('home.our-team')
+    @include('home.parts.our-team')
 
-    @include('home.testimonial')
+    @include('home.parts.testimonial')
 
-    @include('home.clients-brand')
+    @include('home.parts.clients-brand')
 
-    @include('home.latest-news')
+    @include('home.parts.latest-news')
 
 @endsection
