@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/articles', 'ArticlesController@index');
+
+Route::get('/articles/{id}', 'ArticlesController@getArticle');
+
+
