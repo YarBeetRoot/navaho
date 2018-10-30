@@ -37,7 +37,21 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="header-login">
-                        <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Login / Sign Up</a>
+                        <!-- Authentication Links -->
+                        @guest
+                            <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">{{ __('Login / Sign Up') }}</a>
+                        @else
+                            {{ Auth::user()->name }}
+                            <a class="" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </div>
                 </div>
             </div>
