@@ -41,11 +41,10 @@
                         @guest
                             <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">{{ __('Login / Sign Up') }}</a>
                         @else
-                            {{ Auth::user()->name }}
-                            <a class="" href="{{ route('logout') }}"
+                            <a class="login" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ Auth::user()->name }} {{ __('Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
