@@ -9,7 +9,7 @@
 
 @include('layouts.parts.login')
 
-@include('layouts.parts.menu')
+@include('layouts.parts.navbar')
 
 @yield('content')
 

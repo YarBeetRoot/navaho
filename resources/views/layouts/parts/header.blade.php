@@ -23,13 +23,13 @@
                             <li>
                                 <div class="phone">
                                     <i class="fa fa-phone"></i>
-                                    +1(800) 699-7071
+                                    {{ setting('site.phone') }}
                                 </div>
                             </li>
                             <li>
                                 <div class="mail">
                                     <i class="fa fa-envelope"></i>
-                                    iam@domain.com
+                                    {{ setting('site.email') }}
                                 </div>
                             </li>
                         </ul>

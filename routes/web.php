@@ -11,14 +11,23 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')
+        ->name('home');
 
-Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles', 'ArticlesController@index')
+        ->name('articles');
 
-Route::get('/articles/{id}', 'ArticlesController@getArticle');
-
-
+Route::get('/articles/{id}', 'ArticlesController@getArticle')
+        ->name('article');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::get('/{category}/articles', 'ArticlesController@getArticlesByCategory')
+        ->name('category');

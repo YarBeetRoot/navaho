@@ -3,41 +3,14 @@
         <!-- Start blog news single -->
         <article class="blog-news-single">
             <div class="blog-news-img">
-                <img src="/{{ $article->thumbnail }}" alt="image">
+                <img src="{{ asset('storage/'.$article->thumbnail) }}" alt="image">
             </div>
             <div class="blog-news-title">
                 <h2>{{ $article->title }}</h2>
                 <p>By <a class="blog-author" href="#">{{ $article->author }}</a> <span class="blog-date">|18 October 2015</span></p>
             </div>
             <div class="blog-news-details blog-single-details">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of <a href="#">text</a></p>
-                <blockquote>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from</p>
-                    <span> - John Doe</span>
-                </blockquote>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
-                <ul>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                </ul>
-                <ol>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                    <li>There are many variations of passages of Lorem Ipsum</li>
-                </ol>
-                <h1>This is H1 Title Example</h1>
-                <h2>This is H2 Title Example</h2>
-                <h3>This is H3 Title Example</h3>
-                <h4>This is H4 Title Example</h4>
-                <h5>This is H5 Title Example</h5>
-                <h6>This is H6 Title Example</h6>
+                {!! $article->text !!}
                 <div class="blog-single-bottom">
                     <div class="row">
                         <div class="col-md-8">

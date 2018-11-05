@@ -4,15 +4,15 @@
         @foreach($articles as $article)
         <article class="blog-news-single">
             <div class="blog-news-img">
-                <a href="/articles/{{ $article->id }}"><img src="{{ $article->thumbnail }}" alt="image"></a>
+                <a href="{{ route('article', ['id' => $article->id]) }}"><img src="/storage/{{ $article->thumbnail }}" alt="image"></a>
             </div>
             <div class="blog-news-title">
-                <h2><a href="blog-single-with-right-sidebar.html">{{ $article->title }}</a></h2>
+                <h2><a href="{{ route('article', ['id' => $article->id]) }}">{{ $article->title }}</a></h2>
                 <p>By <a class="blog-author" href="#">{{ $article->author }}</a> <span class="blog-date">|18 October 2015</span></p>
             </div>
             <div class="blog-news-details">
-                <p>{{ $article->text }}</p>
-                <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                {!! $article->text !!}
+                <a class="blog-more-btn" href="{{ route('article', ['id' => $article->id]) }}">Read More <i class="fa fa-long-arrow-right"></i></a>
             </div>
         </article>
         @endforeach

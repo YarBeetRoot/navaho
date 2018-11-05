@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
+
+    /**
+     * Get the category that owns the article.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }

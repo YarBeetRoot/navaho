@@ -222,7 +222,7 @@ Author URI : http://www.markups.io/
   background-color: #2bcdc1;  
 }
 
-.widget-catg li{
+.widget-catg li.active{
   color: #2bcdc1;
 }
 

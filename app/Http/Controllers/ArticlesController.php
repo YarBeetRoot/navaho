@@ -27,4 +27,14 @@ class ArticlesController extends Controller
             ->with('article', $article)
             ->with('categories', $categories);
     }
+
+    public function getArticlesByCategory($category)
+    {
+        $articles = Category::where('name', $category)->first()->articles;
+        $categories = Category::all('name', 'id');
+
+        return view('articles.index')
+            ->with('articles', $articles)
+            ->with('categories', $categories);
+    }
 }
