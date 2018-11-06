@@ -1,6 +1,5 @@
 /node_modules
 /public
-public/robots.txt
 /storage/*.key
 /vendor
 /.idea
