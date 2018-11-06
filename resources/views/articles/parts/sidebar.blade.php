@@ -16,15 +16,7 @@
             <h4 class="widget-title">Categories</h4>
             <ul class="widget-catg">
                 @foreach($categories as $category)
-                    @php
-                    $isActive = null;
-
-                    // Check if link is current
-                    if(url(route('category', ['category' => $category->name])) == url()->current()){
-                    $isActive = 'active';
-                    }
-                    @endphp
-                <li class="{{ $isActive }}"><a href="{{ route('category', ['category' => $category->name]) }}">{{ $category->name }}</a></li>
+                <li class="{{ $category->class }}"><a href="{{ route('category', ['category' => $category->name]) }}">{{ $category->name }}</a></li>
                 @endforeach
             </ul>
         </div>

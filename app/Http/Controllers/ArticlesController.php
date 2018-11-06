@@ -21,7 +21,7 @@ class ArticlesController extends Controller
     public function getArticle($id)
     {
         $article = Article::find($id);
-        $categories = Category::all('name', 'id');
+        $categories = $this->getCategoriesWithActiveClass($article->category->name);
 
         return view('articles.index')
             ->with('article', $article)
@@ -31,10 +31,27 @@ class ArticlesController extends Controller
     public function getArticlesByCategory($category)
     {
         $articles = Category::where('name', $category)->first()->articles;
-        $categories = Category::all('name', 'id');
+        $categories = $this->getCategoriesWithActiveClass(null, $category);
 
         return view('articles.index')
             ->with('articles', $articles)
             ->with('categories', $categories);
+    }
+
+    public function getCategoriesWithActiveClass($articleCategoryName = null, $categoryName = null)
+    {
+        $categories = Category::all('name', 'id');
+
+        foreach($categories as $key => $category) {
+
+            if (($articleCategoryName == $category->name) || $categoryName == $category->name) {
+                $categories[$key]['class'] = 'active';
+            }else{
+                $categories[$key]['class'] = '';
+            }
+        }
+
+        return $categories;
+
     }
 }
